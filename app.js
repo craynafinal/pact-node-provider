@@ -7,6 +7,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const heroesRouter = require('./routes/heroes');
+var providerStateRouter = require('./routes/provider_state');
 
 var app = express();
 
@@ -20,5 +21,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.use('/heroes', heroesRouter);
+
+// setting up here for testing purpose
+process.env.PACT_MODE = 'true';
+
+if (process.env.PACT_MODE === 'true') {
+  app.use('/provider-state', providerStateRouter);
+}
 
 module.exports = app;

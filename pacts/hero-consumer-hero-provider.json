@@ -19,10 +19,13 @@
         "body": {
           "name": "Superman",
           "superpower": "flying",
-          "universe": "DC",
-          "id": null
+          "universe": "DC"
         },
         "matchingRules": {
+          "$.headers.Accept": {
+            "match": "regex",
+            "regex": "application\\/json; *charset=utf-8"
+          },
           "$.headers.Content-Type": {
             "match": "regex",
             "regex": "application\\/json; *charset=utf-8"
@@ -35,10 +38,10 @@
           "Content-Type": "application/json; charset=utf-8"
         },
         "body": {
+          "id": 42,
           "name": "Superman",
           "superpower": "flying",
-          "universe": "DC",
-          "id": 42
+          "universe": "DC"
         },
         "matchingRules": {
           "$.headers.Content-Type": {

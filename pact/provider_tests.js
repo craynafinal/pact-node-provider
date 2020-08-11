@@ -18,7 +18,7 @@ let opts = {
     provider: 'hero-provider',
     publishVerificationResult: true,
     providerVersion: packageJson.version,
-    providerStatesSetupUrl: 'http://localhost:3000/provider_state'
+    providerStatesSetupUrl: 'http://localhost:3000/provider-state'
 };
 
 new Verifier().verifyProvider(opts).then(function () {
